@@ -205,8 +205,8 @@ input:invalid + #message {
     height: 60px;
     margin: 8px;
     position: relative;
-    top: 87px;
-    right: 160px;
+    top: 50px;
+    right: 100px;
   }
   .btn {
     border-radius: 5px;
