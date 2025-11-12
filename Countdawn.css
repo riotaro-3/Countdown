@@ -177,16 +177,15 @@ input:invalid + #message {
     font-size: 30px;
     margin: 8px;
     position: relative;
-    left: 40px;
-    bottom: 10px;
+    left: 10px;
+    bottom: 40px;
   }
   #cats::after {
     font-size: 20px;
     margin: 8px;
     font-size: 40px;
     position: relative;
-    left: 30px;
-    top: 10px;
+    bottom: 20px;
   }
   .controls {
     position: relative;
@@ -199,7 +198,7 @@ input:invalid + #message {
     height: 60px;
     margin: 8px;
     position: relative;
-    top: 10px;
+    bottom: 20px;
     left: 30px;
   }
   #start {
