@@ -1,0 +1,221 @@
+@charset "UTF-8";
+#app {
+  margin: 0 auto;
+  background-color: #f7f8fa;
+  box-shadow: 0 0 8px gray;
+}
+:root {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --default-font-family: var(--font-sans);
+}
+#time {/*表示時間*/
+  color:#111827;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--default-font-family, sans-serif);
+}
+.colon {
+  vertical-align: 5%;
+}
+
+@keyframes blink-slow {/*表示時間が点滅するシステム*/
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+#message1 {
+  color: #547443;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+}
+#message {
+  color: #ef4444;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0;
+}
+input:invalid + #message {
+  opacity: 1;
+}
+#minutes {
+  box-shadow: 2px 2px 4px gray inset;
+  position: relative;
+  top: 15px;
+}
+#cats::after {/*タイマーの入力部分のラベル*/
+  content:"分";
+  color:#111827;
+}
+#start {/*スタートボタン*/
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #3b82f6;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+#start:hover {
+  background-color:  #336ecd;
+  transform: scale(0.9,0.9);
+}
+#reset {/*リセットボタン*/
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #6b7280;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+#reset:hover {
+  background-color: #494e57;
+  transform: scale(0.9,0.9);
+}
+.btn {/*スタートとリセットのボタン*/
+  border: 0;
+  color: white;
+  box-shadow: 2px 2px 4px gray;
+  font-weight: bold;
+}
+@media (min-width: 768px) {/*パソコン版*/
+  #app {
+    height: 300px;
+    width: 500px;
+    padding: 32px;
+    border-radius: 10px;
+  }
+  #app2 {
+    position: relative;
+    bottom: 90px;
+  }
+  #message1 {
+    margin: 8px;
+    font-size: 30px;
+    position: relative;
+    bottom: 10px;
+  }
+  #time {
+    font-size: 92px;
+    margin: 8px;
+    position: relative;
+    top: 10px;
+  }
+  #message {
+    margin: 8px;
+    font-size: 30px;
+    position: relative;
+    top: 90px;
+  }
+  #minutes {
+    width: 100px;
+    height: 60px;
+    font-size: 50px;
+    margin: 8px;
+    position: relative;
+    top: 25px;
+  }
+  #cats::after {
+    font-size: 40px;
+    margin: 8px;
+    position: relative;
+    top: 20px;
+    right: 5px;
+    font-size: 40px;
+  }
+  .controls {
+    position: relative;
+    top: 22px;
+    text-align: center;
+  }
+  #reset {
+    width: 100px;
+    height: 80px;
+    margin: 8px;
+    font-size: 20px;
+  }
+  #start {
+    width: 100px;
+    height: 80px;
+    margin: 8px;
+    font-size: 20px;
+  }
+  .btn {
+    border-radius: 10px;
+    position: relative;
+    top: 15px;
+  }
+}
+@media (max-width: 767px) {/*スマホ版*/
+  #app2 {
+    position: relative;
+    bottom: 50px;
+  }
+  #message1 {
+    margin: 8px;
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+  }
+  #time {
+    font-size: 55px;
+    bottom: 20px;
+    width: 300px;
+    height: 80px;
+  }
+  #message {
+    margin: 8px;
+    font-size: 25px;
+    position: relative;
+    top: 90px;
+  }
+  #minutes {
+    width: 100px;
+    height: 60px;
+    font-size: 30px;
+    margin: 8px;
+    position: relative;
+    left: 80px;
+  }
+  #cats::after {
+    font-size: 20px;
+    margin: 8px;
+    font-size: 40px;
+    position: relative;
+    left: 70px;
+    top: 20px;
+  }
+  .controls {
+    position: relative;
+    top: 50px;
+    text-align: center;
+  }
+  #reset {
+    width: 100px;
+    height: 60px;
+    margin: 8px;
+    position: relative;
+    top: 10px;
+    left: 70px;
+  }
+  #start {
+    width: 100px;
+    height: 60px;
+    margin: 8px;
+    position: relative;
+    top: 87px;
+    right: 160px;
+  }
+  .btn {
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  #app {
+    height: 350px;
+    width: 320px;
+    padding: 16px;
+    border-radius: 5px;
+  }
+}
