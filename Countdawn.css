@@ -178,7 +178,7 @@ input:invalid + #message {
     margin: 8px;
     position: relative;
     left: 10px;
-    bottom: 10px;
+    bottom: 30px;
   }
   #cats::after {
     font-size: 20px;
@@ -197,7 +197,7 @@ input:invalid + #message {
     height: 60px;
     margin: 8px;
     position: relative;
-    bottom: 20px;
+    bottom: 10px;
     left: 30px;
   }
   #start {
