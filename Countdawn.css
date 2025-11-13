@@ -48,8 +48,6 @@ input:invalid + #message {
 }
 #minutes {
   box-shadow: 2px 2px 4px gray inset;
-  position: relative;
-  top: 15px;
 }
 #cats::after {/*タイマーの入力部分のラベル*/
   content:"分";
@@ -172,6 +170,9 @@ input:invalid + #message {
     width: 300px;
     height: 80px;
   }
+  #line {
+    height: 5px;
+  }
   #message {
     margin: 8px;
     font-size: 25px;
@@ -191,7 +192,8 @@ input:invalid + #message {
     font-size: 20px;
     margin: 8px;
     font-size: 40px;
-    position: relative;
+    position: absolute;
+    left: 70px;
   }
   .controls {
     position: relative;
@@ -203,7 +205,7 @@ input:invalid + #message {
     height: 60px;
     margin: 8px;
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 20px;
   }
   #start {
@@ -211,7 +213,7 @@ input:invalid + #message {
     height: 60px;
     margin: 8px;
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 20px;
   }
   .btn {
