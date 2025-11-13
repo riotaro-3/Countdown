@@ -168,3 +168,9 @@ function inputs () {/*入力内容が4桁以下の整数以外にならないよ
 }
 
 minutes.addEventListener('input',inputs);/*入力された時*/
+
+document.body.addEventListener('touchstart', function() {
+  const unlock = new Audio();
+  unlock.play().catch(e => {});
+}, { once: true });
+
