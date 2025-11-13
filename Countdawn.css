@@ -4,18 +4,13 @@
   background-color: #f7f8fa;
   box-shadow: 0 0 8px gray;
 }
-:root {
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-  --default-font-family: var(--font-sans);
-}
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
 #time {/*表示時間*/
   color:#111827;
   margin: 0 auto;
   text-align: center;
-  font-family: var(--default-font-family, sans-serif);
+  font-family: 'Oxygen Mono',serif;
 }
-
 #line {
   color: aqua;
   width: 80%;
@@ -61,6 +56,7 @@ input:invalid + #message {
 }
 #minutes {
   box-shadow: 2px 2px 4px gray inset;
+  text-align: center;
 }
 #cats::after {/*タイマーの入力部分のラベル*/
   content:"分";
@@ -219,7 +215,6 @@ input:invalid + #message {
   }
   .controls {
     display: flex;
-    justify-content: space-between;
     align-items: center; 
     text-align: center;
   }
