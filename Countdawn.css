@@ -197,6 +197,15 @@ input:invalid + #message {
     position: relative;
     top: 80px;
   }
+  .controls {
+    position: relative;
+    top: 50px;
+    left: 10px;
+  }
+  #minutes,#cats::after {
+    position: relative;
+    left: 80px;
+  }
   #minutes {
     width: 100px;
     height: 60px;
@@ -209,6 +218,7 @@ input:invalid + #message {
     margin: 8px;
     font-size: 40px;
     position: relative;
+    top: 5px;
   }
   #reset {
     width: 40%;
