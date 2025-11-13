@@ -20,6 +20,9 @@
   color: aqua;
   width: 80%;
   margin-left: auto;
+  background-color: aqua;
+  border: none;
+  border-radius:2px;
 }
 
 @keyframes blink-slow {/*表示時間が点滅するシステム*/
@@ -105,8 +108,7 @@ input:invalid + #message {
     top: 10px;
   }
   #line {
-    height: 5px;
-    color: aqua;
+    height: 10px;
   }
   #message {
     margin: 8px;
