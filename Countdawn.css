@@ -4,6 +4,9 @@
   background-color: #f7f8fa;
   box-shadow: 0 0 8px gray;
 }
+#app2 {
+  position: relative;
+}
 @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
 #time {/*表示時間*/
   color:#111827;
@@ -14,20 +17,14 @@
 #line {
   color: aqua;
   width: 80%;
-  margin-left: auto;
   background-color: aqua;
   border: none;
-  position: absolute;
-  right: 50px;
 }
 #back {
   color: gray;
   width: 80%;
-  margin-left: auto;
   background-color: gray;
   border: none;
-  position: absolute;
-  right: 50px;
 }
 
 @keyframes blink-slow {/*表示時間が点滅するシステム*/
@@ -116,10 +113,16 @@ input:invalid + #message {
   #line {
     height: 10px;
     border-radius:5px;
+    position: absolute;
+    top: 45%;
+    right: 10%;
   }
   #back {
     height: 10px;
     border-radius:5px;
+    position: absolute;
+    top: 45%;
+    right: 10%;
   }
   #message {
     margin: 8px;
@@ -186,16 +189,16 @@ input:invalid + #message {
   #line {
     height: 5px;
     border-radius:2px;
-    position: relative;
-    bottom: 31px;
-    left: 10px;
+    position: absolute;
+    top: 25%;
+    right: 10%;
   }
   #back {
     height: 5px;
     border-radius:2px;
-    position: relative;
-    bottom: 18px;
-    left: 10px;
+    position: absolute;
+    top: 25%;
+    right: 10%;
   }
   #message {
     margin: 8px;
