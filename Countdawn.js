@@ -80,6 +80,8 @@ start.addEventListener('click',function() {/*スタートボタンが押され�
 
        width =(80/second)/100;
 
+       width2=80;
+
        running= true;
 
        loop();/*カウントダウンのfunction */
@@ -123,6 +125,7 @@ function a() {/*リセットボタンが押された時の役割*/
   music.currentTime=0;
   line.style.width = 80+"%";
   clearInterval(lines);
+  width2=80;
   }
 }
 reset.addEventListener('click',a);/*リセットが押された時*/
@@ -184,6 +187,7 @@ function loop() { /*カウントダウンのfunction*/
      document.getElementById('start').textContent='スタート';
      start.style.backgroundColor='#3b82f6';
      running = false;
+     width2=80;
    }
  },1000);
 }

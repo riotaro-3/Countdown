@@ -206,7 +206,7 @@ input:invalid + #message {
     height: 60px;
     font-size: 30px;
     margin: 8px;
-    position: absolute;
+    position: relative;
     left: 50px;
     bottom: 15px;
   }
@@ -214,19 +214,20 @@ input:invalid + #message {
     font-size: 20px;
     margin: 8px;
     font-size: 40px;
-    position: absolute;
+    position: relative;
     right: 70px;
   }
   .controls {
-    position: relative;
-    top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
     text-align: center;
   }
   #reset {
     width: 40%;
     height: 60px;
     margin: 8px;
-    position: absolute;
+    position: relative;
     top: 30px;
     right: 20px;
   }
@@ -234,7 +235,7 @@ input:invalid + #message {
     width: 40%;
     height: 60px;
     margin: 8px;
-    position: absolute;
+    position: relative;
     top: 30px;
     left: 20px;
   }
