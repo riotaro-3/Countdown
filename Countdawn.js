@@ -168,7 +168,6 @@ function loop() { /*カウントダウンのfunction*/
   }
    else if (second<=0) {/*残り時間0秒の時*/
      clearInterval(timer);
-     clearInterval(lines);
      const uttr= new SpeechSynthesisUtterance('時間になりました');
      uttr.voice=voices[61];
      speechSynthesis.speak(uttr);

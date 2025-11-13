@@ -203,36 +203,24 @@ input:invalid + #message {
     font-size: 30px;
     margin: 8px;
     position: relative;
-    left: 50px;
-    bottom: 15px;
   }
   #cats::after {
     font-size: 20px;
     margin: 8px;
     font-size: 40px;
     position: relative;
-    right: 70px;
-  }
-  .controls {
-    display: flex;
-    align-items: center; 
-    text-align: center;
   }
   #reset {
     width: 40%;
     height: 60px;
     margin: 8px;
     position: relative;
-    top: 30px;
-    right: 20px;
   }
   #start {
     width: 40%;
     height: 60px;
     margin: 8px;
     position: relative;
-    top: 30px;
-    left: 20px;
   }
   .btn {
     border-radius: 5px;
