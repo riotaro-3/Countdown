@@ -17,19 +17,14 @@ speechSynthesis.onvoiceschanged = e => {
 let width;
 let width2= 80;
 width =Number(80);
-music.volume = 0; 
 start.addEventListener('click',function() {/*スタートボタンが押された時 */
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
 
-        if (!music) {
-          music = new Audio('Countdawn.mp3');
-          music.volume = 0; 
-          music.play().then(() => {
-            music.pause();
-            music.currentTime = 0;
-            music.volume = 1; 
-          });
-        }
+    if (!music) {
+      music = new Audio('Countdawn.mp3');
+      music.preload = 'auto'; 
+    }
+    
     
     value=Number(minutes.value);/*入力内容を数値化してる */
 
