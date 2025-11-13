@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Countdawn Timer</title>
-  <link rel="stylesheet" href="Countdawn.css">
+  <link rel="stylesheet" href="Countdawn.css?v=2">
 </head>
 <body>
   <div id="app">
@@ -13,6 +13,7 @@
     <p id="message" class="messag"aria-live="polite">整数以外は入力できません</p>
     <div id="app2">
      <h1 id ="time">00:00:00</h1>
+     <hr id ="line">
      <div class="controls">
       <label for="minutes" id="cats">
       <input id="minutes" type="tel" min="1" maxlength="4" onchange="inputs()" placeholder="0" pattern="[0-9]{1,4}"/>

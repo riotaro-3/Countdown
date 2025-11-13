@@ -15,8 +15,11 @@
   text-align: center;
   font-family: var(--default-font-family, sans-serif);
 }
-.colon {
-  vertical-align: 5%;
+
+#line {
+  color: aqua;
+  width: 80%;
+  margin-left: auto;
 }
 
 @keyframes blink-slow {/*表示時間が点滅するシステム*/
@@ -103,6 +106,10 @@ input:invalid + #message {
     position: relative;
     top: 10px;
   }
+  #line {
+    height: 5px;
+    color: aqua;
+  }
   #message {
     margin: 8px;
     font-size: 30px;
@@ -177,8 +184,8 @@ input:invalid + #message {
     font-size: 30px;
     margin: 8px;
     position: absolute;
-    left: 50%;
-    top: 10px;
+    left: 50px;
+    top: 5px;
   }
   #cats::after {
     font-size: 20px;
@@ -195,17 +202,17 @@ input:invalid + #message {
     width: 40%;
     height: 60px;
     margin: 8px;
-    position: relative;
+    position: absolute;
     bottom: 10px;
-    left: 30px;
+    right: 20px;
   }
   #start {
     width: 40%;
     height: 60px;
     margin: 8px;
-    position: relative;
+    position: absolute;
     bottom: 10px;
-    right: 20px;
+    left: 20px;
   }
   .btn {
     border-radius: 5px;
