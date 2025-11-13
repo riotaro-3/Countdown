@@ -17,6 +17,7 @@ speechSynthesis.onvoiceschanged = e => {
 let width;
 let width2= 80;
 width =Number(80);
+music.volume = 0; 
 start.addEventListener('click',function() {/*スタートボタンが押された時 */
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
 
@@ -161,7 +162,6 @@ function loop() { /*カウントダウンのfunction*/
      speechSynthesis.speak(uttr);
      message1.textContent='残り1分!もう少し!';
      message1.style.opacity=1;
-     time.style.animation='blink-slow 1s infinite';
    }
    else if (second<=10&&second>0) {/*残り時間1分からカウント終了まで*/
     time.style.animation='blink-slow 1s infinite';
