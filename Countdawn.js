@@ -10,6 +10,7 @@ let value;/*入力内容を数値化したもの */
 let second=0;
 let hun=0;
 let music;/*終了音 */
+let music2;
 let voices=[];/*メッセージ音声 */
 speechSynthesis.onvoiceschanged = e => {
   voices=speechSynthesis.getVoices();
@@ -20,10 +21,8 @@ width =Number(80);
 start.addEventListener('click',function() {/*スタートボタンが押された時 */
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
 
-    if (!music) {
-      music = new Audio('Countdawn.mp3');
-      music.preload = 'auto'; 
-    }
+      music2 = new Audio('music.mp3');
+      music2.play();
     
     
     value=Number(minutes.value);/*入力内容を数値化してる */
