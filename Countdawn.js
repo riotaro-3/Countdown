@@ -16,6 +16,16 @@ speechSynthesis.onvoiceschanged = e => {
 start.addEventListener('click',function() {/*スタートボタンが押された時 */
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
 
+        if (!music) {
+          music = new Audio('Countdawn.mp3');
+          music.volume = 0; 
+          music.play().then(() => {
+            music.pause();
+            music.currentTime = 0;
+            music.volume = 1; 
+          });
+        }
+    
     value=Number(minutes.value);/*入力内容を数値化してる */
 
     if (second>0&&hun===value) {/*スタートボタンが押された時一時停止後のスタートかどうか */
@@ -168,9 +178,3 @@ function inputs () {/*入力内容が4桁以下の整数以外にならないよ
 }
 
 minutes.addEventListener('input',inputs);/*入力された時*/
-
-document.body.addEventListener('touchstart', function() {
-  const unlock = new Audio();
-  unlock.play().catch(e => {});
-}, { once: true });
-
