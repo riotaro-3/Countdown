@@ -20,12 +20,8 @@ let width2= 80;
 width =Number(80);
 start.addEventListener('click',function() {/*スタートボタンが押された時 */
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
-      music= new Audio('Countdawn.mp3');
-      music.playSilent();
-
-      music2 = new Audio('music.mp3');
-      music2.play();
-    
+    music= new Audio('Countdawn.mp3');
+    music.playSilent();
     
     value=Number(minutes.value);/*入力内容を数値化してる */
 
