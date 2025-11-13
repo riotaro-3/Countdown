@@ -208,7 +208,7 @@ input:invalid + #message {
   }
   .controls {
     position: relative;
-    top: 10px;
+    top: 50px;
     left: 10px;
   }
   #minutes,#cats::after {
