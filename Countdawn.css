@@ -22,7 +22,17 @@
   margin-left: auto;
   background-color: aqua;
   border: none;
-  border-radius:2px;
+  position: absolute;
+  right: 50px;
+}
+#back {
+  color: gray;
+  width: 80%;
+  margin-left: auto;
+  background-color: gray;
+  border: none;
+  position: absolute;
+  right: 50px;
 }
 
 @keyframes blink-slow {/*表示時間が点滅するシステム*/
@@ -109,6 +119,11 @@ input:invalid + #message {
   }
   #line {
     height: 10px;
+    border-radius:5px;
+  }
+  #back {
+    height: 10px;
+    border-radius:5px;
   }
   #message {
     margin: 8px;
@@ -174,6 +189,11 @@ input:invalid + #message {
   }
   #line {
     height: 5px;
+    border-radius:2px;
+  }
+  #back {
+    height: 5px;
+    border-radius:2px;
   }
   #message {
     margin: 8px;
@@ -188,14 +208,14 @@ input:invalid + #message {
     margin: 8px;
     position: absolute;
     left: 50px;
-    top: 5px;
+    bottom: 15px;
   }
   #cats::after {
     font-size: 20px;
     margin: 8px;
     font-size: 40px;
     position: absolute;
-    left: 70px;
+    right: 70px;
   }
   .controls {
     position: relative;
@@ -207,7 +227,7 @@ input:invalid + #message {
     height: 60px;
     margin: 8px;
     position: absolute;
-    bottom: 5px;
+    top: 30px;
     right: 20px;
   }
   #start {
@@ -215,7 +235,7 @@ input:invalid + #message {
     height: 60px;
     margin: 8px;
     position: absolute;
-    bottom: 5px;
+    top: 30px;
     left: 20px;
   }
   .btn {

@@ -3,6 +3,7 @@ let minutes=document.getElementById('minutes');
 const time=document.getElementById('time');
 const message1=document.getElementById('message1');
 const start=document.getElementById('start');
+const line=document.getElementById('line');
 let timer;/*カウントダウンのfunctionをブロック外でも使えるよう */
 let running= false;/*カウントが動いてるかどうか */
 let value;/*入力内容を数値化したもの */
@@ -13,6 +14,10 @@ let voices=[];/*メッセージ音声 */
 speechSynthesis.onvoiceschanged = e => {
   voices=speechSynthesis.getVoices();
 }
+let width;
+let width2= 80;
+width =Number(80);
+let lines;
 start.addEventListener('click',function() {/*スタートボタンが押された時 */
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
 
@@ -69,8 +74,11 @@ start.addEventListener('click',function() {/*スタートボタンが押され�
          const min=Math.floor(value%60);/*分 */
          document.getElementById('time').textContent=`${String(hours).padStart(2,'0')}:${String(min).padStart(2,'0')}:00`;/*最初の表示時間 */
        }
+       line.style.width = 80+"%";
   
        second=60*minutes.value;/*秒 */
+
+       width =(80/second)/100;
 
        running= true;
 
@@ -90,6 +98,7 @@ start.addEventListener('click',function() {/*スタートボタンが押され�
      if (music) {/*終了音を消す*/
       music.pause();
       music.currentTime=0;
+      clearInterval(lines);
       }
     }
 
@@ -112,11 +121,17 @@ function a() {/*リセットボタンが押された時の役割*/
   if (music) {
   music.pause();
   music.currentTime=0;
+  line.style.width = 80+"%";
+  clearInterval(lines);
   }
 }
 reset.addEventListener('click',a);/*リセットが押された時*/
 
 function loop() { /*カウントダウンのfunction*/
+  lines=setInterval(() => {
+  width2 -=width
+  line.style.width = width2+"%";
+  },10);
   timer=setInterval(() => {
    second -= 1;
    const minute=Math.floor((second/60)%60);
@@ -128,6 +143,7 @@ function loop() { /*カウントダウンのfunction*/
    else {/*入力内容が1時間以上だったら*/
     document.getElementById('time').textContent=`${String(hour).padStart(2,'0')}:${String(minute).padStart(2,'0')}:${String(second2).padStart(2,'0')}`;
    }
+   
    if (second===300) {/*残り時間5分の時*/
      const uttr= new SpeechSynthesisUtterance('残り5分だよ');
      uttr.voice=voices[44];
@@ -150,11 +166,12 @@ function loop() { /*カウントダウンのfunction*/
      message1.style.opacity=1;
      time.style.animation='blink-slow 1s infinite';
    }
-   else if (second<=60&&second>0) {/*残り時間1分からカウント終了まで*/
+   else if (second<=10&&second>0) {/*残り時間1分からカウント終了まで*/
     time.style.animation='blink-slow 1s infinite';
   }
    else if (second<=0) {/*残り時間0秒の時*/
      clearInterval(timer);
+     clearInterval(lines);
      const uttr= new SpeechSynthesisUtterance('時間になりました');
      uttr.voice=voices[61];
      speechSynthesis.speak(uttr);
@@ -164,6 +181,9 @@ function loop() { /*カウントダウンのfunction*/
      time.style.animation='none';
      music= new Audio('Countdawn.mp3');
      music.play();
+     document.getElementById('start').textContent='スタート';
+     start.style.backgroundColor='#3b82f6';
+     running = false;
    }
  },1000);
 }
