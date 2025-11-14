@@ -18,10 +18,19 @@ speechSynthesis.onvoiceschanged = e => {
 let width;
 let width2= 80;
 width =Number(80);
-start.addEventListener('click',function() {/*スタートボタンが押された時 */
+start.addEventListener('click',async function() {/*スタートボタンが押された時 */
+  if (!music) {
+    music = new Audio('Countdawn.mp3');
+    try {
+      await music.play();  // ユーザー操作による再生
+      music.pause();
+      music.currentTime = 0;
+      console.log("再生の許可が取れました");
+    } catch(e) {
+      console.log("再生がブロックされました:", e);
+    }
+  }
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
-    music2= new Audio('music.mp3');
-    music2.play();
     
     value=Number(minutes.value);/*入力内容を数値化してる */
 
