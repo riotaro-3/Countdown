@@ -18,7 +18,14 @@ speechSynthesis.onvoiceschanged = e => {
 let width;
 let width2= 80;
 width =Number(80);
+let et= false;
+
 start.addEventListener('click',async function() {/*スタートボタンが押された時 */
+  if (!et) {
+    speechSynthesis.speak(new SpeechSynthesisUtterance(""));  // 無音で読み上げ開始
+    et = true;
+  }
+  
   if (!music) {
     music = new Audio('Countdawn.mp3');
       music.volume=0;
@@ -28,7 +35,6 @@ start.addEventListener('click',async function() {/*スタートボタンが押�
       music.volume=1;
       console.log("再生の許可が取れました");
       music.onend = () => {
-       speechSynthesis.speak(new SpeechSynthesisUtterance(""));
     }
   }
 
