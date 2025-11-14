@@ -21,16 +21,16 @@ width =Number(80);
 start.addEventListener('click',async function() {/*スタートボタンが押された時 */
   if (!music) {
     music = new Audio('Countdawn.mp3');
-    try {
+      music.volume=0;
       await music.play();  // ユーザー操作による再生
       music.pause();
       music.currentTime = 0;
+      music.volume=1;
       console.log("再生の許可が取れました");
-    } catch(e) {
-      console.log("再生がブロックされました:", e);
+      music.onend = () => {
+       speechSynthesis.speak(new SpeechSynthesisUtterance(""));
     }
   }
-  speechSynthesis.speak(new SpeechSynthesisUtterance(""));
 
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
     
@@ -173,6 +173,12 @@ function loop() { /*カウントダウンのfunction*/
      clearInterval(timer);
      const uttr= new SpeechSynthesisUtterance('時間になりました');
      uttr.voice=voices[61];
+
+     uttr.onend = () => {
+      music.currentTime = 0;
+      music.play();
+    };    
+
      speechSynthesis.speak(uttr);
      document.getElementById('time').textContent='00:00:00';
      message1.textContent='時間になりました';
