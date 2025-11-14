@@ -21,6 +21,12 @@ width =Number(80);
 let et= false;
 
 start.addEventListener('click',async function() {/*スタートボタンが押された時 */
+  if (!music2) {
+    music2=new Audio('music.mp3');
+    await music2.play();
+    music2.pause();
+    music2.currentTime=0;
+  }
   if (!et) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(""));  // 無音で読み上げ開始
     et = true;
@@ -28,12 +34,6 @@ start.addEventListener('click',async function() {/*スタートボタンが押�
   
   if (!music) {
       music = new Audio('Countdawn.mp3');
-      music.volume=0;
-      await music.play();  // ユーザー操作による再生
-      music.pause();
-      music.currentTime = 0;
-      music.volume=1;
-      console.log("再生の許可が取れました");
   }
   else {
     music.pause();
