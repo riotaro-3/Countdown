@@ -27,15 +27,17 @@ start.addEventListener('click',async function() {/*スタートボタンが押�
   }
   
   if (!music) {
-    music = new Audio('Countdawn.mp3');
+      music = new Audio('Countdawn.mp3');
       music.volume=0;
       await music.play();  // ユーザー操作による再生
       music.pause();
       music.currentTime = 0;
       music.volume=1;
       console.log("再生の許可が取れました");
-      music.onend = () => {
-    }
+  }
+  else {
+    music.pause();
+    music.currentTime=0;
   }
 
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
@@ -128,11 +130,11 @@ function a() {/*リセットボタンが押された時の役割*/
   running = false;
   second=0;
   time.style.animation='none';
+  line.style.width = 80+"%";
+  width2=80;
   if (music) {
   music.pause();
   music.currentTime=0;
-  line.style.width = 80+"%";
-  width2=80;
   }
 }
 reset.addEventListener('click',a);/*リセットが押された時*/
