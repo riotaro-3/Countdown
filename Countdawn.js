@@ -30,6 +30,8 @@ start.addEventListener('click',async function() {/*スタートボタンが押�
       console.log("再生がブロックされました:", e);
     }
   }
+  speechSynthesis.speak(new SpeechSynthesisUtterance(""));
+
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
     
     value=Number(minutes.value);/*入力内容を数値化してる */
@@ -176,7 +178,6 @@ function loop() { /*カウントダウンのfunction*/
      message1.textContent='時間になりました';
      message1.style.opacity=1;
      time.style.animation='none';
-     music= new Audio('Countdawn.mp3');
      music.play();
      document.getElementById('start').textContent='スタート';
      start.style.backgroundColor='#3b82f6';
