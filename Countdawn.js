@@ -155,7 +155,7 @@ function loop() { /*カウントダウンのfunction*/
    line.style.width = width2+"%";
    if (second===300) {/*残り時間5分の時*/
      const uttr= new SpeechSynthesisUtterance('残り5分だよ');
-     uttr.voice=voices[44];
+     uttr.voice=voices[0];
      speechSynthesis.speak(uttr);
      message1.textContent='残り5分だよ!';
      message1.style.opacity=1;
@@ -163,13 +163,15 @@ function loop() { /*カウントダウンのfunction*/
    else if (second===180) {/*残り時間3分の時*/
      const uttr= new SpeechSynthesisUtterance('残り3分だよ');
      uttr.voice=voices[0];
+     speechSynthesis.cancel();
      speechSynthesis.speak(uttr);
      message1.textContent='残り3分だよ!';
      message1.style.opacity=1;
    }
    else if (second===60) {/*残り時間1分の時*/
      const uttr= new SpeechSynthesisUtterance('残り1分、もう少し');
-     uttr.voice=voices[29];
+     uttr.voice=voices[0];
+     speechSynthesis.cancel();
      speechSynthesis.speak(uttr);
      message1.textContent='残り1分!もう少し!';
      message1.style.opacity=1;
@@ -180,12 +182,13 @@ function loop() { /*カウントダウンのfunction*/
    else if (second<=0) {/*残り時間0秒の時*/
      clearInterval(timer);
      const uttr= new SpeechSynthesisUtterance('時間になりました');
-     uttr.voice=voices[61];
+     uttr.voice=voices[0];
+     speechSynthesis.cancel();
 
      uttr.onend = () => {
       music.currentTime = 0;
       music.play();
-    }
+    };
 
      speechSynthesis.speak(uttr);
      document.getElementById('time').textContent='00:00:00';
