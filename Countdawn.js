@@ -21,23 +21,28 @@ width =Number(80);
 let et= false;
 
 start.addEventListener('click',async function() {/*スタートボタンが押された時 */
-  if (!music2) {
-    music2=new Audio('music.mp3');
-    await music2.play();
-    music2.pause();
-    music2.currentTime=0;
-  }
-  if (!et) {
-    speechSynthesis.speak(new SpeechSynthesisUtterance(""));  // 無音で読み上げ開始
-    et = true;
-  }
-  
+
   if (!music) {
-      music = new Audio('Countdawn.mp3');
+    music = new Audio('Countdawn.mp3');
   }
   else {
     music.pause();
     music.currentTime=0;
+  }
+
+  try {
+    music.volume = 0;       // ← 無音で再生（絶対音を鳴らさない）
+    await music.play();     // ← ここで再生許可が取れる
+    music.pause();
+    music.currentTime = 0;
+    music.volume = 1;       // ← 音量を元に戻す
+  } catch(e) {
+    console.log("音の再生がブロック:", e);
+  }
+
+  if (!et) {
+    speechSynthesis.speak(new SpeechSynthesisUtterance(""));  // 無音で読み上げ開始
+    et = true;
   }
 
   if (!running) {/*カウントが動いてたら一時停止ボタンの役割になる */
