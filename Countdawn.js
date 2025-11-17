@@ -185,14 +185,13 @@ function loop() { /*カウントダウンのfunction*/
      uttr.onend = () => {
       music.currentTime = 0;
       music.play();
-    };    
+    }
 
      speechSynthesis.speak(uttr);
      document.getElementById('time').textContent='00:00:00';
      message1.textContent='時間になりました';
      message1.style.opacity=1;
      time.style.animation='none';
-     music.play();
      document.getElementById('start').textContent='スタート';
      start.style.backgroundColor='#3b82f6';
      running = false;
