@@ -23,11 +23,12 @@ let et= false;
 start.addEventListener('click',async function() {/*スタートボタンが押された時 */
 
   if (!music) {
-    music = new Audio('Countdawn.mp3');
-    const unlock = new Audio('music.mp3');
-    await unlock.play();
-    unlock.pause();
-    unlock.currentTime = 0;
+  music = new Audio('Countdawn.mp3');
+  music.volume = 0;     // 無音で鳴らす
+  await music.play();   // 許可を取得
+  music.pause();
+  music.currentTime = 0;
+  music.volume=1;
   }
   else {
     music.pause();
