@@ -44,7 +44,7 @@ start.addEventListener('click',async function() {/*スタートボタンが押�
     
     value=Number(minutes.value);/*入力内容を数値化してる */
 
-    if (second>0&&hun===value) {/*スタートボタンが押された時一時停止後のスタートかどうか */
+    if (second>0) {/*スタートボタンが押された時一時停止後のスタートかどうか */
       running=true;
       document.getElementById('start').textContent='一時停止';
       start.style.backgroundColor='#ED1A3D';
@@ -103,8 +103,8 @@ start.addEventListener('click',async function() {/*スタートボタンが押�
   } 
 
   else {/*カウントが動いてなかった時、一時停止の役割 */
-     document.getElementById('start').textContent='スタート';
-     start.style.backgroundColor='#3b82f6';
+     document.getElementById('start').textContent='再開';
+     start.style.backgroundColor='#8AC75A';
      clearInterval(timer);/*カウントの停止 */
      running= false;
      time.style.animation='none';/*点滅を消す*/
