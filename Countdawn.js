@@ -24,11 +24,10 @@ start.addEventListener('click',async function() {/*スタートボタンが押�
 
   if (!music) {
     music = new Audio('Countdawn.mp3');
-    music.volume = 0;
-    await music.play();
-    music.pause();
-    music.currentTime = 0;
-    music.volume = 1;
+    const unlock = new Audio('music.mp3');
+    await unlock.play();
+    unlock.pause();
+    unlock.currentTime = 0;
   }
   else {
     music.pause();
@@ -189,7 +188,7 @@ function loop() { /*カウントダウンのfunction*/
      uttr.onend = () => {
       music.currentTime = 0;
       music.play();
-    };
+     };
 
      document.getElementById('time').textContent='00:00:00';
      message1.textContent='時間になりました';
